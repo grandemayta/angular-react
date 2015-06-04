@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+bower_components
+node_modules
+project/.idea
+public/*.jpg
+public/*.png
+public/*.gif
+public/*.woff
+public/*.eot
+public/*.svg
+public/*.ttf
+public/*.js
+public/*.css

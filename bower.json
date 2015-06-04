@@ -1,0 +1,14 @@
+{
+  "name": "angularize",
+  "version": "1.0",
+  "author": "Gabriel Mayta",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielmayta/angularize.git"
+  },
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-touch": "~1.4.0",
+    "angular-ui-router": "~0.2.15"
+  }
+}
