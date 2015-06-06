@@ -28,5 +28,5 @@ module.exports = {
         new Webpack.ProvidePlugin({
             Snap: 'snap'
         })
-    ]<
+    ]
 };

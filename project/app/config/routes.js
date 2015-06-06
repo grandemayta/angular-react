@@ -4,6 +4,7 @@ module.exports = function (app) {
 
     require('../partials/base')(app);
     require('../views/home')(app);
+    require('../views/page2')(app);
 
     app.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -19,6 +20,12 @@ module.exports = function (app) {
                 parent: 'base',
                 url: '/',
                 template: '<home/>'
+            })
+
+            .state('page2', {
+                parent: 'base',
+                url: '/',
+                template: '<page2/>'
             });
 
     });

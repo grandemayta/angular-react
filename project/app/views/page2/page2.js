@@ -2,11 +2,11 @@
 
 module.exports = function (app) {
 
-    app.directive('home', function () {
+    app.directive('page2', function () {
 
         return {
             restrict: 'E',
-            template: '<h1>Nello combina guai</h1>'
+            template: '<h1>Forza Inter sempre e comunque!</h1>'
         };
 
     });

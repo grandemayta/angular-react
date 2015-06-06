@@ -57,3 +57,11 @@ header {
 .snap-content {
   background: $main_content_area_color;
 }
+
+/* SPACERS */
+.spacer-50 {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-top: 50px;
+}
