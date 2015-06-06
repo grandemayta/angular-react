@@ -4,7 +4,7 @@ require('angular');
 require('angular-ui-router');
 require('angular-touch');
 
-require('css/slideout.css');
+require('scss/common.scss');
 
 var app = angular.module('app', [
         'ui.router',

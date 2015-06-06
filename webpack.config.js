@@ -10,8 +10,8 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.html$/, loader: 'html'},
-            {test: /\.css$/, loader: ExtractTextPlugin.extract('css')},
-            {test: /\.(jpg|png|gif|eot|woff|ttf|svg)$/, loader: 'file'}
+            {test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass'), exclude: /node_modules/},
+            {test: /\.(jpg|png|gif|eot|woff|woff2|ttf|svg)$/, loader: 'file'}
         ]
     },
     resolve: {
@@ -20,13 +20,13 @@ module.exports = {
             'angular': 'angular/angular.js',
             'angular-ui-router': 'angular-ui-router/release/angular-ui-router.min.js',
             'angular-touch': 'angular-touch/angular-touch.min.js',
-            'slideout': 'slideout/index.js'
+            'snap': 'lib/snap.js'
         }
     },
     plugins: [
         new ExtractTextPlugin('app.css'),
         new Webpack.ProvidePlugin({
-            Slideout: 'slideout'
+            Snap: 'snap'
         })
-    ]
+    ]<
 };
