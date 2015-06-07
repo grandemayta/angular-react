@@ -2,14 +2,16 @@
 
 module.exports = function (app) {
 
+    require('./UsersController')(app);
+
     app.directive('home', function () {
 
         return {
             restrict: 'E',
-            template: '<h1>Nello combina guai</h1>'
+            replace: true,
+            template: require('./home.html'),
+            controller: 'UsersController'
         };
 
     });
-
-
 };

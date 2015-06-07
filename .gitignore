@@ -1,6 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
 bower_components
+build
 node_modules
 project/.idea
 project/public/*.jpg

@@ -2,11 +2,11 @@
 
 module.exports = function (app) {
 
-    app.directive('page2', function () {
+    app.directive('user', function () {
 
         return {
             restrict: 'E',
-            template: '<h1>Forza Inter sempre e comunque!</h1>'
+            template: '<h2>Grande nello sei meglio di ciarmiello<h2/>'
         };
 
     });

@@ -18,8 +18,10 @@ module.exports = {
         modulesDirectories: ['node_modules', 'bower_components', 'project'],
         alias: {
             'angular': 'angular/angular.js',
-            'angular-ui-router': 'angular-ui-router/release/angular-ui-router.min.js',
-            'angular-touch': 'angular-touch/angular-touch.min.js',
+            'angular-ui-router': 'angular-ui-router/release/angular-ui-router.js',
+            'ct-ui-router-extras.core': 'ui-router-extras/release/modular/ct-ui-router-extras.core.js',
+            'ct-ui-router-extras.sticky': 'ui-router-extras/release/modular/ct-ui-router-extras.sticky.js',
+            'angular-touch': 'angular-touch/angular-touch.js',
             'snap': 'lib/snap.js'
         }
     },
