@@ -2,7 +2,7 @@
 
 module.exports = function (app) {
 
-    app.directive('base', function ($state, SnapMenuService) {
+    app.directive('headermenucontent', function ($state, SnapMenuService) {
 
         return {
             restrict: 'E',

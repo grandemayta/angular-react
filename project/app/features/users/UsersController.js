@@ -11,6 +11,10 @@ module.exports = function (app) {
                 $scope.users = data;
             });
 
+        $scope.userDetail = function (id) {
+            $state.go('users.detail', {id: id});
+        };
+
     });
 
 };

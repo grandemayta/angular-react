@@ -18,5 +18,6 @@ var app = angular.module('app', [
 
 require('../config')(app);
 require('../shared/services')(app);
+require('../shared/directives')(app);
 
 angular.bootstrap(document.body, ['app']);

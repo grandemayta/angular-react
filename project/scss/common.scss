@@ -70,6 +70,10 @@ header {
   margin-top: 50px;
 }
 
+.padding-bottom-50 {
+  padding-bottom: 50px;
+}
+
 /* MENU LIST */
 
 .menu-list {
@@ -132,4 +136,29 @@ header {
 .card-content i {
   float: right;
 
+}
+
+/* PANEL */
+.panel-backbutton {
+  position: fixed;
+  z-index: 120;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $main_content_area_color;
+}
+
+.label {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.text {
+  display: block;
+  width: 100%;
+  padding: 0 10px;
 }

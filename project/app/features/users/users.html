@@ -1,0 +1,9 @@
+<div ng-repeat="user in ::users" ng-click="userDetail(user.login)" class="card-content">
+    <figure style="background-image: url('{{user.avatar_url}}')"></figure>
+    <h2 ng-bind="user.login"></h2>
+    <i class="icon icon-chevron-right"></i>
+</div>
+
+<!-- USER DETAIL -->
+<div ui-view="detail" ng-show="$state.includes('users.detail')"></div>
+
