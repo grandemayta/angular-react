@@ -20,7 +20,7 @@ module.exports = function (app) {
                 </div>\
                 <div class="snap-content">\
                     <header>\
-                        <i ng-click="toggleMenu()" class="icon-menu icon icon-navicon-round"></i>\
+                        <i ng-click="toggleMenu()" class="icon-header-left icon icon-navicon-round"></i>\
                     </header>\
                     <div class="spacer-50"></div>\
                     <ui-view class="scrollable-area"/>\

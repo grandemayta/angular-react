@@ -6,11 +6,20 @@ module.exports = function (app) {
 
         return {
             restrict: 'E',
-            template: '\
-            <header class="padding-bottom-50">\
-                <i ng-click="goBack()" class="icon-menu icon icon-chevron-left"></i>\
-            </header>',
+            transclude: true,
             replace: true,
+            scope: {
+              title: '='
+            },
+            template: '\
+            <div class="panel-backbutton">\
+                <header class="padding-bottom-50">\
+                    <i ng-click="goBack()" class="icon-header-left icon icon-chevron-left"></i>\
+                    <p ng-bind="title" class="text-header"></p>\
+                </header>\
+                <div class="padding-bottom-50"></div>\
+                <div ng-transclude></div>\
+            </div>',
             link: function (scope, element) {
 
                 element.ready(function () {

@@ -83,29 +83,6 @@ module.exports = function (grunt) {
                     ]
                 },
                 dest: 'build/config.xml'
-            },
-
-            /* CONFIG WP8 */
-            config_wp8: {
-                options: {
-                    id: 'com.hotelnet.it',
-                    version: '1.0.0',
-                    name: 'Angularize',
-                    author: {
-                        name: 'Hotelnet SRL',
-                        email: 'info@hotel-net.it',
-                        href: 'http://hotel-net.it'
-                    },
-                    description: 'Descrizione Oler...',
-                    preferences: [
-                        {name: 'Fullscreen', value: 'false'},
-                        {name: 'Orientation', value: 'portrait'},
-                        {name: 'StatusBarOverlaysWebView', value: 'true'},
-                        {name: 'DisallowOverscroll', value: 'true'},
-                        {name: 'WebViewBounce', value: 'false'}
-                    ]
-                },
-                dest: 'build/config.xml'
             }
         },
 
@@ -119,6 +96,8 @@ module.exports = function (grunt) {
                     command: 'plugin',
                     action: 'add',
                     plugins: [
+                        // TROVARE UN MODO INTELLIGENTE PER CONFIGURARE CROSSWALK
+                        /*'https://github.com/MobileChromeApps/cordova-plugin-crosswalk-webview.git',*/
                         'https://github.com/apache/cordova-plugin-statusbar.git',
                         'https://github.com/apache/cordova-plugin-dialogs.git',
                         'https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git',
@@ -131,13 +110,10 @@ module.exports = function (grunt) {
                     command: 'plugin',
                     action: 'add',
                     plugins: [
-                        'https://github.com/apache/cordova-plugin-network-information.git',
-                        'https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git',
                         'https://github.com/apache/cordova-plugin-statusbar.git',
                         'https://github.com/apache/cordova-plugin-dialogs.git',
-                        'https://github.com/apache/cordova-plugin-inappbrowser.git',
-                        'https://github.com/apache/cordova-plugin-contacts.git',
-                        'https://github.com/apache/cordova-plugin-geolocation.git'
+                        'https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git',
+                        'https://github.com/apache/cordova-plugin-inappbrowser.git'
                     ]
                 }
             },

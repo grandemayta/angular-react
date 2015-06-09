@@ -1,17 +1,22 @@
-<div class="panel-backbutton">
+<header-backbutton title="user.login">
 
-    <header-backbutton></header-backbutton>
+    <spinner ng-if="spinnerStatus"></spinner>
+    <error-server ng-if="serverStatus"></error-server>
 
-    <h2 class="label">Nickname</h2>
-    <p class="text" ng-bind="user.name"></p>
+    <div ng-if="!spinnerStatus && !serverStatus">
+        <figure style="background-image: url('{{user.avatar_url}}')" class="img-md-center"></figure>
 
-    <h2 class="label">Fullname</h2>
-    <p class="text" ng-bind="user.login"></p>
+        <h2 class="label-center">Nickname</h2>
+        <p class="text-center" ng-bind="user.login"></p>
 
-    <h2 class="label">Email</h2>
-    <p class="text" ng-bind="user.email"></p>
+        <h2 class="label-center">Fullname</h2>
+        <p class="text-center" ng-bind="user.name"></p>
 
-    <h2 class="label">Followers</h2>
-    <p class="text" ng-bind="user.followers"></p>
+        <h2 class="label-center">Email</h2>
+        <p class="text-center" ng-bind="user.email"></p>
 
-</div>
+        <h2 class="label-center">Followers</h2>
+        <p class="text-center" ng-bind="user.followers"></p>
+    </div>
+
+</header-backbutton>

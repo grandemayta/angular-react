@@ -2,6 +2,7 @@
 @import "fonts";
 @import "fontastic";
 @import "snap";
+@import "widget/spinner";
 
 * {
   margin: 0;
@@ -37,20 +38,31 @@ h1 {
 header {
   position: fixed;
   z-index: 100;
+  display: inline-flex;
   width: 100%;
   height: 50px;
   background: $main_color;
   box-shadow: $shadow_bottom;
+  overflow: hidden;
 }
 
-.icon-menu {
-  float: left;
+.icon-header-left {
+  display: inline-block;
   width: 50px;
   height: 50px;
   padding-top: 10px;
   color: $opposite_text_color;
   font-size: 32px;
   text-align: center;
+}
+
+.text-header {
+  display: inline;
+  margin-left: 10px;
+  padding-top: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  color: $opposite_text_color;
 }
 
 /* MENU LEFT */
@@ -146,19 +158,59 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: auto;
   background: $main_content_area_color;
 }
 
-.label {
+.label-center {
   display: block;
   width: 100%;
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
+  text-align: center;
 }
 
-.text {
+.text-center {
   display: block;
   width: 100%;
-  padding: 0 10px;
+  text-align: center;
+}
+
+/* IMAGES STYLE */
+.img-md-center {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 40px auto;
+  background-color: $secondary_text_color;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+/* ERRORS SERVER */
+.error-content {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.error-icon {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 100px auto 0 auto;
+  text-align: center;
+  line-height: 100px;
+  font-size: 46px;
+}
+
+.error-message {
+  display: block;
+  width: 80%;
+  margin: 10px 10%;
+  font-size: 20px;
+  font-weight: 300;
 }
