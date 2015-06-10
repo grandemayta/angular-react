@@ -22,7 +22,6 @@ module.exports = function (app) {
                     <header>\
                         <i ng-click="toggleMenu()" class="icon-header-left icon icon-navicon-round"></i>\
                     </header>\
-                    <div class="spacer-50"></div>\
                     <ui-view class="scrollable-area"/>\
                 </div>\
             </div>',

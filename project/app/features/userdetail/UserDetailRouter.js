@@ -2,19 +2,25 @@
 
 module.exports = function (app) {
 
-    app.config(function ($stateProvider, $stickyStateProvider) {
+    app.config(function ($stateProvider) {
 
         $stateProvider
             .state('users.detail', {
                 url: 'detail/:id',
-                sticky: true,
                 views: {
                     'detail': {
                         template: require('./userdetail.html'),
                         controller: 'UserDetailController'
                     }
+                },
+                onEnter: function (UtilsService) {
+                    UtilsService.toggleOverflowHidden();
+                },
+                onExit: function (UtilsService) {
+                    UtilsService.toggleOverflowHidden();
                 }
             });
+
     });
 
 };
