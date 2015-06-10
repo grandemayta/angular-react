@@ -5,12 +5,12 @@ module.exports = function (app) {
     app.config(function ($stateProvider) {
 
         $stateProvider
-            .state('users.detail', {
-                url: 'detail/:id',
+            .state('users.detail.repositories', {
+                url: '^/repositories/:id',
                 views: {
-                    'detail': {
-                        template: require('./userdetail.html'),
-                        controller: 'UserDetailController'
+                    'repositories': {
+                        template: require('./userrepositories.html'),
+                        controller: 'UserRepositoriesController'
                     }
                 },
                 onEnter: function (UtilsService) {

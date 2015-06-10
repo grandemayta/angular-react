@@ -42,7 +42,7 @@ module.exports = function (grunt) {
                 options: {
                     id: 'com.gabrielmayta.it',
                     version: '1.0.0',
-                    name: 'Oler',
+                    name: 'Angularize',
                     author: {
                         name: 'Gabriel Mayta',
                         email: 'grandemayta@gmail.com',

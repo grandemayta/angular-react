@@ -4,9 +4,18 @@ module.exports = function (app) {
 
         return {
 
-            toggleOverflowHidden: function () {
-                var checkOverflowHidden = angular.element(document.querySelector('.scrollable-area'));
-                if (checkOverflowHidden.length > 0) checkOverflowHidden[0].classList.toggle('overflow-hidden');
+            enableOverflowHidden: function () {
+                var checkOverflowHidden = angular.element(document.querySelector('.view-content'));
+                if (checkOverflowHidden.length > 0) {
+                    checkOverflowHidden[0].classList.add('overflow-hidden');
+                }
+            },
+
+            disableOverflowHidden: function () {
+                var checkOverflowHidden = angular.element(document.querySelector('.view-content'));
+                if (checkOverflowHidden.length > 0) {
+                    checkOverflowHidden[0].classList.remove('overflow-hidden');
+                }
             }
         };
 

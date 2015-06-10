@@ -2,25 +2,22 @@
 
 module.exports = function (app) {
 
-    app.controller('UserDetailController', function ($scope, $state, RestService) {
+    app.controller('UserRepositoriesController', function ($scope, $state, RestService) {
 
+        $scope.title = $state.params.id + '\'s repositories';
         $scope.spinnerStatus = true;
         $scope.serverStatus = false;
 
-        // LOAD USER
+        // LOAD USER REPOSITORIES
         RestService
-            .getData('users/' + $state.params.id)
+            .getData('users/' + $state.params.id + '/repos')
             .then(function (data) {
-                $scope.user = data;
+                $scope.repositories = data;
                 $scope.spinnerStatus = false;
             }, function (error) {
                 $scope.spinnerStatus = false;
                 $scope.serverStatus = true;
             });
-
-        $scope.userRepositories = function () {
-            $state.go('users.detail.repositories', {id: $state.params.id});
-        };
 
     });
 

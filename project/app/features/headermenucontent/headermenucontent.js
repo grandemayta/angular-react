@@ -11,10 +11,7 @@ module.exports = function (app) {
                 <div class="snap-drawer snap-drawer-left">\
                     <ul class="menu-list">\
                         <li>\
-                            <p ng-click="changePage(\'home\')">Home</p>\
-                        </li>\
-                        <li>\
-                            <p ng-click="changePage(\'page2\')">Page 2</p>\
+                            <p ng-click="changePage(\'users\')">Users</p>\
                         </li>\
                     </ul>\
                 </div>\
@@ -22,7 +19,7 @@ module.exports = function (app) {
                     <header>\
                         <i ng-click="toggleMenu()" class="icon-header-left icon icon-navicon-round"></i>\
                     </header>\
-                    <ui-view class="scrollable-area"/>\
+                    <ui-view/>\
                 </div>\
             </div>',
             replace: true,
