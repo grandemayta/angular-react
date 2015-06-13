@@ -12,12 +12,6 @@ module.exports = function (app) {
                         template: require('./userdetail.html'),
                         controller: 'UserDetailController'
                     }
-                },
-                onEnter: function (UtilsService) {
-                    UtilsService.enableOverflowHidden();
-                },
-                onExit: function (UtilsService) {
-                    UtilsService.disableOverflowHidden();
                 }
             });
 

@@ -6,6 +6,7 @@ node_modules
 project/.idea
 project/public/*.jpg
 project/public/*.png
+project/public/*.json
 project/public/*.gif
 project/public/*.woff
 project/public/*.woff2

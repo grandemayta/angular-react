@@ -1,11 +1,16 @@
 <!-- USER DETAIL -->
-<div ui-view="detail" ng-show="$state.includes('users.detail')" class="view-virtual"></div>
+<div ui-view="detail"
+     ng-show="$state.includes('users.detail')"
+     class="view-virtual">
+</div>
 
-<div class="view-content">
+<div ng-class="{'overflow-hidden' : currentState !== currentState}" class="view-content">
     <spinner ng-if="spinnerStatus"></spinner>
     <error-server ng-if="serverStatus"></error-server>
 
-    <div ng-repeat="user in ::users" ng-click="userDetail(user.login)" class="card-content">
+    <div ng-if="!spinnerStatus && !serverStatus"
+         ng-repeat="user in ::users"
+         ng-click="userDetail(user.login)" class="card-content">
         <figure style="background-image: url('{{user.avatar_url}}')"></figure>
         <h2 ng-bind="user.login"></h2>
         <i class="icon icon-chevron-right"></i>

@@ -7,7 +7,7 @@ module.exports = function (app) {
         $rootScope.$state = $state;
 
         $rootScope.$on('$stateChangeStart', function (event, toState) {
-
+            $rootScope.currentState = toState.name;
         });
 
         $rootScope.$on('$locationChangeSuccess', function () {

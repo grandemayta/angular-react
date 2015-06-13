@@ -17,8 +17,9 @@ module.exports = function (app) {
                     <i ng-click="goBack()" class="icon-header-left icon icon-chevron-left"></i>\
                     <p ng-bind="title" class="text-header"></p>\
                 </header>\
-                <div class="padding-bottom-50"></div>\
-                <div ng-transclude></div>\
+                <div ng-class="{\'overflow-hidden\' : currentState !== currentState}" class="view-content">\
+                    <div ng-transclude></div>\
+                </div>\
             </div>',
             link: function (scope, element) {
 

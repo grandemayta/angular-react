@@ -22,13 +22,17 @@ module.exports = {
             'ct-ui-router-extras.core': 'ui-router-extras/release/modular/ct-ui-router-extras.core.js',
             'ct-ui-router-extras.sticky': 'ui-router-extras/release/modular/ct-ui-router-extras.sticky.js',
             'angular-touch': 'angular-touch/angular-touch.js',
-            'snap': 'lib/snap.js'
+            'snap': 'lib/snap.js',
+            'velocity': 'lib/velocity.js',
+            'hammerjs': 'lib/hammer.js'
         }
     },
     plugins: [
         new ExtractTextPlugin('app.css'),
         new Webpack.ProvidePlugin({
-            Snap: 'snap'
+            Snap: 'snap',
+            Velocity: 'velocity',
+            Hammer: 'hammerjs'
         })
     ]
 };

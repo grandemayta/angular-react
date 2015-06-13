@@ -12,12 +12,6 @@ module.exports = function (app) {
                         template: require('./userrepositories.html'),
                         controller: 'UserRepositoriesController'
                     }
-                },
-                onEnter: function (UtilsService) {
-                    UtilsService.enableOverflowHidden();
-                },
-                onExit: function (UtilsService) {
-                    UtilsService.disableOverflowHidden();
                 }
             });
 

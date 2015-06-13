@@ -3,7 +3,8 @@
     <spinner ng-if="spinnerStatus"></spinner>
     <error-server ng-if="serverStatus"></error-server>
 
-    <div ng-if="!spinnerStatus &&  !serverStatus" ng-repeat="repository in ::repositories track by $index" class="list-view-02">
+    <div ng-if="!spinnerStatus &&  !serverStatus" ng-repeat="repository in ::repositories track by $index"
+         class="list-view-02">
         <div ng-bind="repository.created_at | date" class="list-view-02-label-tiny"></div>
         <div ng-bind="repository.name" class="list-view-02-label-large"></div>
         <div ng-bind="repository.language" class="list-view-02-label-small">Javascript</div>

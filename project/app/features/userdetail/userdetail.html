@@ -1,5 +1,8 @@
 <!-- USER REPOSITORIES -->
-<div ui-view="repositories" ng-show="$state.includes('users.detail.repositories')" class="view-virtual"></div>
+<div ui-view="repositories"
+     ng-show="$state.includes('users.detail.repositories')"
+     class="view-virtual">
+</div>
 
 <header-backbutton title="user.login">
 
@@ -10,15 +13,19 @@
         <figure style="background-image: url('{{user.avatar_url}}')" class="img-md-center"></figure>
 
         <h2 class="label-center">Nickname</h2>
+
         <p class="text-center" ng-bind="user.login"></p>
 
         <h2 class="label-center">Fullname</h2>
+
         <p class="text-center" ng-bind="user.name"></p>
 
         <h2 class="label-center">Email</h2>
+
         <p class="text-center" ng-bind="user.email"></p>
 
         <h2 class="label-center">Followers</h2>
+
         <p class="text-center" ng-bind="user.followers"></p>
 
         <button ng-click="userRepositories()" class="btn btn-md btn-lightblue">
