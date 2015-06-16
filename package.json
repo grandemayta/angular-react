@@ -23,5 +23,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js --content-base project/public --hot --progress --color --port 2241 --inline"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
   }
 }

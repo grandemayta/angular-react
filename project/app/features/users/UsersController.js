@@ -6,6 +6,8 @@ module.exports = function (app) {
 
         $scope.spinnerStatus = true;
 
+        console.log(MYAPP);
+
         // LOAD USERS
         RestService
             .getData('users')

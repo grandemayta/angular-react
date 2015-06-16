@@ -15,3 +15,4 @@ project/public/*.svg
 project/public/*.ttf
 project/public/*.js
 project/public/*.css
+project/public/*.map

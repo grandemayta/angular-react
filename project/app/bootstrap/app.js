@@ -2,9 +2,9 @@
 
 require('angular');
 require('angular-ui-router');
-require('angular-touch');
 require('ct-ui-router-extras.core');
 require('ct-ui-router-extras.sticky');
+require('angular-touch');
 
 require('scss/common.scss');
 
