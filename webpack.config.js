@@ -2,7 +2,7 @@ var Webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './project/app/bootstrap/app.js',
+    entry: './project/app/core/bootstrap.js',
     output: {
         path: './project/public',
         filename: 'bundle.js'
@@ -19,8 +19,6 @@ module.exports = {
         alias: {
             'angular': 'angular/angular.js',
             'angular-ui-router': 'angular-ui-router/release/angular-ui-router.js',
-            'ct-ui-router-extras.core': 'ui-router-extras/release/modular/ct-ui-router-extras.core.js',
-            'ct-ui-router-extras.sticky': 'ui-router-extras/release/modular/ct-ui-router-extras.sticky.js',
             'angular-touch': 'angular-touch/angular-touch.js',
             'snap': 'lib/snap.js',
             'velocity': 'lib/velocity.js',

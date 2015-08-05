@@ -1,22 +1,16 @@
-'use strict';
-
 require('angular');
 require('angular-ui-router');
-require('ct-ui-router-extras.core');
-require('ct-ui-router-extras.sticky');
 require('angular-touch');
-
 require('scss/common.scss');
 
 var app = angular.module('app', [
         'ui.router',
-        'ct.ui.router.extras.core',
-        'ct.ui.router.extras.sticky',
         'ngTouch'
     ]
 );
 
-require('../config')(app);
+require('./routes')(app);
+require('./run')(app);
 require('../shared/services')(app);
 require('../shared/directives')(app);
 

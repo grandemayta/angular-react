@@ -1,8 +1,8 @@
-'use strict';
-
 module.exports = function (app) {
 
-    app.factory('AnimationsService', function () {
+    "use strict";
+
+    app.factory("AnimationsService", function () {
 
         var service = {};
 

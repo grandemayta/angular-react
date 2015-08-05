@@ -1,38 +1,40 @@
-'use strict';
-
 module.exports = function (app) {
 
-    app.directive('headerBackbutton', function ($window) {
+    "use strict";
 
-        return {
-            restrict: 'E',
-            transclude: true,
-            replace: true,
-            scope: {
-              title: '='
-            },
-            template: '\
-            <div class="panel-backbutton">\
-                <header class="padding-bottom-50">\
-                    <i ng-click="goBack()" class="icon-header-left icon icon-chevron-left"></i>\
-                    <p ng-bind="title" class="text-header"></p>\
-                </header>\
-                <div ng-class="{\'overflow-hidden\' : currentState !== currentState}" class="view-content">\
-                    <div ng-transclude></div>\
-                </div>\
-            </div>',
-            link: function (scope, element) {
+    app.directive("headerBackbutton", ['$window',
+        function ($window) {
 
-                element.ready(function () {
+            return {
+                restrict: "E",
+                transclude: true,
+                replace: true,
+                scope: {
+                    title: "="
+                },
+                template: "\
+                <div class=\"panel-backbutton\">\
+                    <header class=\"padding-bottom-50\">\
+                        <i ng-click=\"goBack()\" class=\"icon-header-left icon icon-chevron-left\"></i>\
+                        <p ng-bind=\"title\" class=\"text-header\"></p>\
+                    </header>\
+                    <div ng-class=\"{'overflow-hidden' : currentState !== currentState}\" class=\"view-content\">\
+                        <div ng-transclude></div>\
+                    </div>\
+                </div>",
+                link: function (scope, element) {
 
-                    scope.goBack = function () {
-                        $window.history.back();
-                    }
+                    element.ready(function () {
 
-                });
-            }
-        };
+                        scope.goBack = function () {
+                            $window.history.back();
+                        }
 
-    });
+                    });
+                }
+            };
+
+        }
+    ]);
 
 };

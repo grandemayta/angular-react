@@ -1,27 +1,26 @@
 module.exports = function (app) {
 
-    app.factory('SnapMenuService', function () {
+    "use strict";
+
+    app.factory("SnapMenuService", function () {
 
         var snapper;
 
         return {
 
-            init: function (element) {
-
+            init: function (id) {
                 snapper = new Snap({
-                    element: element,
-                    disable: 'right',
+                    element: document.querySelector('#' + id),
+                    disable: "right",
                     hyperextensible: false
                 });
-
             },
 
             toggleMenu: function () {
-                if (snapper.state().state === 'closed') snapper.open('left');
-                else snapper.close('left')
+                if (snapper.state().state === "closed") snapper.open("left");
+                else snapper.close("left")
             }
         };
-
 
     });
 
