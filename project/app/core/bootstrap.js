@@ -1,17 +1,19 @@
 require('angular');
 require('angular-ui-router');
 require('angular-touch');
+require('oclazyload');
 require('scss/common.scss');
 
 var app = angular.module('app', [
         'ui.router',
-        'ngTouch'
+        'ngTouch',
+        'oc.lazyLoad'
     ]
 );
 
-require('./routes')(app);
 require('./run')(app);
-require('../shared/services')(app);
-require('../shared/directives')(app);
+require('./modules')(app);
+require('../services')(app);
+require('../directives')(app);
 
 angular.bootstrap(document.body, ['app']);

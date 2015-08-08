@@ -1,29 +1,21 @@
-module.exports = function (app) {
+module.exports = function ($scope, $state, RestService) {
 
-    "use strict";
+    $scope.spinnerStatus = true;
+    $scope.serverStatus = false;
 
-    app.controller("UserDetailController", ["$scope", "$state", "RestService",
-        function ($scope, $state, RestService) {
+    // LOAD USER
+    RestService
+        .getData("users/" + $state.params.id)
+        .then(function (data) {
+            $scope.user = data;
+            $scope.spinnerStatus = false;
+        }, function (error) {
+            $scope.spinnerStatus = false;
+            $scope.serverStatus = true;
+        });
 
-            $scope.spinnerStatus = true;
-            $scope.serverStatus = false;
-
-            // LOAD USER
-            RestService
-                .getData("users/" + $state.params.id)
-                .then(function (data) {
-                    $scope.user = data;
-                    $scope.spinnerStatus = false;
-                }, function (error) {
-                    $scope.spinnerStatus = false;
-                    $scope.serverStatus = true;
-                });
-
-            $scope.userRepositories = function () {
-                $state.go("users.detail.repositories", {id: $state.params.id});
-            };
-
-        }
-    ]);
+    $scope.userRepositories = function () {
+        $state.go("users.detail.repositories", {id: $state.params.id});
+    };
 
 };

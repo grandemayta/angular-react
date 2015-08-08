@@ -7,8 +7,9 @@
     "url": "https://github.com/gabrielmayta/angularize.git"
   },
   "dependencies": {
-    "angular": "1.4.0",
-    "angular-touch": "1.4.0",
-    "angular-ui-router": "0.2.15"
+    "angular": "1.3.17",
+    "angular-touch": "1.3.17",
+    "angular-ui-router": "0.2.15",
+    "oclazyload": "0.6.3"
   }
 }

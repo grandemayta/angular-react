@@ -20,6 +20,7 @@ module.exports = {
             'angular': 'angular/angular.js',
             'angular-ui-router': 'angular-ui-router/release/angular-ui-router.js',
             'angular-touch': 'angular-touch/angular-touch.js',
+            'oclazyload': 'oclazyload/dist/oclazyload.js',
             'snap': 'lib/snap.js',
             'velocity': 'lib/velocity.js',
             'hammerjs': 'lib/hammer.js'

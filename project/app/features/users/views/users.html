@@ -1,8 +1,5 @@
 <!-- USER DETAIL -->
-<div ui-view="detail"
-     ng-show="$state.includes('users.detail')"
-     class="view-virtual">
-</div>
+<div ui-view="detail" ng-show="$state.includes('users.detail')" class="view-virtual"></div>
 
 <div ng-class="{'overflow-hidden' : currentState !== currentState}" class="view-content">
     <spinner ng-if="spinnerStatus"></spinner>
