@@ -1,0 +1,76 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'react-hot',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 warn package.json Angularize@1.0.0 No repository field.
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'react-hot', null ]
+7 verbose cache add name=undefined spec="react-hot" args=["react-hot",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'react-hot',
+8 verbose parsed url   path: 'react-hot',
+8 verbose parsed url   href: 'react-hot' }
+9 silly lockFile 33dd90ac-react-hot react-hot
+10 verbose lock react-hot /Users/grandemayta/.npm/33dd90ac-react-hot.lock
+11 silly lockFile 33dd90ac-react-hot react-hot
+12 silly lockFile 33dd90ac-react-hot react-hot
+13 verbose addNamed [ 'react-hot', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile dad67e4c-react-hot react-hot@
+16 verbose lock react-hot@ /Users/grandemayta/.npm/dad67e4c-react-hot.lock
+17 silly addNameRange { name: 'react-hot', range: '*', hasData: false }
+18 verbose request where is /react-hot
+19 verbose request registry https://registry.npmjs.org/
+20 verbose request id d1992b76316f6755
+21 verbose url raw /react-hot
+22 verbose url resolving [ 'https://registry.npmjs.org/', './react-hot' ]
+23 verbose url resolved https://registry.npmjs.org/react-hot
+24 verbose request where is https://registry.npmjs.org/react-hot
+25 info trying registry request attempt 1 at 18:07:15
+26 http GET https://registry.npmjs.org/react-hot
+27 http 404 https://registry.npmjs.org/react-hot
+28 silly registry.get cb [ 404,
+28 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly registry.get     etag: '"5RCGCXJOSJEPDJFRISTTHF57T"',
+28 silly registry.get     'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=0',
+28 silly registry.get     'content-length': '564',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     date: 'Sun, 09 Aug 2015 16:07:16 GMT',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     age: '0',
+28 silly registry.get     connection: 'keep-alive',
+28 silly registry.get     'x-served-by': 'cache-ams4126-AMS',
+28 silly registry.get     'x-cache': 'MISS',
+28 silly registry.get     'x-cache-hits': '0',
+28 silly registry.get     'x-timer': 'S1439136436.471632,VS0,VE167',
+28 silly registry.get     vary: 'Accept' } ]
+29 silly lockFile dad67e4c-react-hot react-hot@
+30 silly lockFile dad67e4c-react-hot react-hot@
+31 error 404 Not Found
+31 error 404
+31 error 404 'react-hot' is not in the npm registry.
+31 error 404 You should bug the author to publish it
+31 error 404 It was specified as a dependency of 'Angularize'
+31 error 404
+31 error 404 Note that you can also install from a
+31 error 404 tarball, folder, or http url, or git url.
+32 error System Darwin 14.4.0
+33 error command "node" "/usr/local/bin/npm" "install" "react-hot" "--save-dev"
+34 error cwd /Users/grandemayta/Projects/apps/angularize
+35 error node -v v0.10.32
+36 error npm -v 1.4.28
+37 error code E404
+38 verbose exit [ 1, true ]

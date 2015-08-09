@@ -1,5 +1,5 @@
 module.exports = function (app) {
-    require("./HeaderBackbuttonDirective")(app);
+    require("./HeaderBackButtonPanelDirective")(app);
     require("./SpinnerDirective")(app);
     require("./ErrorServerDirective")(app);
 };

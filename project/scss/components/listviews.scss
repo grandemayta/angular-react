@@ -1,0 +1,26 @@
+.list-view-02 {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid $divider_color;
+}
+
+.list-view-02-label-large, .list-view-02-label-small, .list-view-02-label-tiny {
+  display: block;
+  width: 100%;
+}
+
+.list-view-02-label-large {
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.list-view-02-label-small {
+  font-size: 14px;
+  text-align: right;
+}
+
+.list-view-02-label-tiny {
+  font-size: 12px;
+}

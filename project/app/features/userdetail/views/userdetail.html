@@ -1,7 +1,7 @@
 <!-- USER REPOSITORIES -->
 <div ui-view="repositories" ng-show="$state.includes('users.detail.repositories')" class="view-virtual"></div>
 
-<header-backbutton title="user.login">
+<header-backbutton-panel title="user.login">
 
     <spinner ng-if="spinnerStatus"></spinner>
     <error-server ng-if="serverStatus"></error-server>
@@ -31,4 +31,4 @@
 
     </div>
 
-</header-backbutton>
+</header-backbutton-panel>

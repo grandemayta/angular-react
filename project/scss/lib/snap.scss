@@ -63,3 +63,13 @@
 .snapjs-expand-right .snap-drawer-right {
   width: 100%;
 }
+
+/* CUSTON CSS */
+.snap-drawer-left {
+  background: $secondary_content_area_color;
+}
+
+/* CONTENT AREA */
+.snap-content {
+  background: $main_content_area_color;
+}

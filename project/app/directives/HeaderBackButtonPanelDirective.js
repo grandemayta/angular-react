@@ -2,7 +2,7 @@ module.exports = function (app) {
 
     "use strict";
 
-    app.directive("headerBackbutton", ['$window',
+    app.directive("headerBackbuttonPanel", ['$window',
         function ($window) {
 
             return {

@@ -1,0 +1,17 @@
+/* BUTTONS */
+.btn {
+  display: block;
+  margin: 20px auto;
+  padding: 12px;
+  border-radius: 2px;
+}
+
+.btn-md {
+  width: 80%;
+  font-size: 16px;
+}
+
+.btn-lightblue {
+  color: $opposite_text_color;
+  background: $main_color;
+}

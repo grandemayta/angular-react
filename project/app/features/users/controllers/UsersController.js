@@ -1,19 +1,28 @@
-module.exports = function ($scope, $state, RestService) {
+module.exports = function ($state, RestService) {
 
-    $scope.spinnerStatus = true;
+    var HelloMessage = require("../users.jsx");
+
+    //$scope.$emit("PAGE_TITLE", "Git users");
+
+    var self = this;
+    self.spinnerStatus = true;
 
     // LOAD USERS
     RestService
         .getData("users")
         .then(function (data) {
-            $scope.spinnerStatus = false;
-            $scope.users = data;
+            self.spinnerStatus = false;
+            //self.users = data;
+            React.render(
+                React.createElement(HelloMessage, {data: data}),
+                document.getElementById('users-views')
+            );
         }, function (error) {
-            $scope.spinnerStatus = false;
-            $scope.serverStatus = true;
+            self.spinnerStatus = false;
+            self.serverStatus = true;
         });
 
-    $scope.userDetail = function (id) {
+    self.userDetail = function (id) {
         $state.go("users.detail", {id: id});
     };
 
