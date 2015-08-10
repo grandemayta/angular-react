@@ -1,4 +1,4 @@
-module.exports = function ($state, RestService) {
+module.exports = function ($scope, $state, RestService) {
 
     var HelloMessage = require("../users.jsx");
 
@@ -7,6 +7,10 @@ module.exports = function ($state, RestService) {
     var self = this;
     self.spinnerStatus = true;
 
+    function test(item) {
+        console.log(item);
+    }
+
     // LOAD USERS
     RestService
         .getData("users")
@@ -14,7 +18,7 @@ module.exports = function ($state, RestService) {
             self.spinnerStatus = false;
             //self.users = data;
             React.render(
-                React.createElement(HelloMessage, {data: data}),
+                React.createElement(HelloMessage, {test: test, data: data}),
                 document.getElementById('users-views')
             );
         }, function (error) {

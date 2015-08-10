@@ -1,7 +1,7 @@
 var app = angular.module("users", []);
 
 app.controller("UsersController", [
-    "$state", "RestService",
+    "$scope", "$state", "RestService",
     require("./controllers/UsersController")
 ]);
 
