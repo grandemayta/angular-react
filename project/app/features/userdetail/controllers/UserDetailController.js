@@ -1,21 +1,32 @@
-module.exports = function ($scope, $state, RestService) {
+module.exports = function ($scope, $state, ReactService, RestService) {
 
-    $scope.spinnerStatus = true;
-    $scope.serverStatus = false;
+    var UserDetailView = require("../views/userdetail.jsx");
+
+    $scope.fnUserRepositories = function (item) {
+        console.log(item);
+        //$state.go("users.detail.repositories", {id: $state.params.id});
+    };
+
+    $scope.userDetailViewData = {
+        fnUserRepositories: $scope.fnUserRepositories,
+        user: {},
+        spinnerStatus: "active",
+        serverStatus: "deactive"
+    };
+
+    ReactService.load(UserDetailView, "userdetail-view", $scope.userDetailViewData);
 
     // LOAD USER
     RestService
         .getData("users/" + $state.params.id)
         .then(function (data) {
-            $scope.user = data;
-            $scope.spinnerStatus = false;
+            $scope.userDetailViewData.user = data;
+            $scope.userDetailViewData.spinnerStatus = false;
+            ReactService.load(UserDetailView, "userdetail-view", $scope.userDetailViewData);
         }, function (error) {
-            $scope.spinnerStatus = false;
-            $scope.serverStatus = true;
+            $scope.userDetailViewData.spinnerStatus = false;
+            $scope.userDetailViewData.serverStatus = true;
+            ReactService.load(UserDetailView, "userdetail-view", $scope.userDetailViewData);
         });
-
-    $scope.userRepositories = function () {
-        $state.go("users.detail.repositories", {id: $state.params.id});
-    };
 
 };

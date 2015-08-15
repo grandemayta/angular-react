@@ -1,7 +1,9 @@
 var Spinner = require("../../../components/SpinnerComponent.jsx");
 var ServerErrors = require("../../../components/ServerErrorsComponent.jsx");
 
-var UsersComponent = React.createClass({
+console.log(React);
+
+var UserDetailView = React.createClass({
 
     userDetail (item, e) {
         this.props.fnUserDetail(item, e);
@@ -29,4 +31,4 @@ var UsersComponent = React.createClass({
 
 });
 
-module.exports = UsersComponent;
+module.exports = UserDetailView;

@@ -5,14 +5,14 @@ module.exports = function ($scope, $state, ReactService, RestService) {
     var UsersView = require("../views/users.jsx");
 
     $scope.fnUserDetail = function (item) {
-        console.log(item);
+        $state.go("users.detail", {id: item.id});
     };
 
     $scope.usersViewData = {
         fnUserDetail: $scope.fnUserDetail,
         users: [],
-        spinnerStatus: 'active',
-        serverStatus: 'deactive'
+        spinnerStatus: "active",
+        serverStatus: "deactive"
     };
 
     ReactService.load(UsersView, "users-view", $scope.usersViewData);
@@ -21,12 +21,12 @@ module.exports = function ($scope, $state, ReactService, RestService) {
     RestService
         .getData("users")
         .then(function (data) {
-            $scope.usersViewData.spinnerStatus = 'deactive';
+            $scope.usersViewData.spinnerStatus = "deactive";
             $scope.usersViewData.users = data;
             ReactService.load(UsersView, "users-view", $scope.usersViewData);
         }, function () {
-            $scope.usersViewData.spinnerStatus = 'deactive';
-            $scope.usersViewData.serverStatus = 'active';
+            $scope.usersViewData.spinnerStatus = "deactive";
+            $scope.usersViewData.serverStatus = "active";
             ReactService.load(UsersView, "users-view", $scope.usersViewData);
         });
 

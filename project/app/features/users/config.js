@@ -7,7 +7,6 @@ module.exports = function (app) {
 
                 parent: "headermenucontent",
                 url: "/",
-                controllerAs: "users",
                 controller: "UsersController",
                 templateProvider: ["$q", function ($q) {
                     var deferred = $q.defer();
