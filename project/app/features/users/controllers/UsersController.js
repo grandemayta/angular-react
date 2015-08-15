@@ -1,33 +1,33 @@
-module.exports = function ($scope, $state, RestService) {
-
-    var HelloMessage = require("../users.jsx");
+module.exports = function ($scope, $state, ReactService, RestService) {
 
     //$scope.$emit("PAGE_TITLE", "Git users");
 
-    var self = this;
-    self.spinnerStatus = true;
+    var UsersView = require("../views/users.jsx");
 
-    function test(item) {
+    $scope.fnUserDetail = function (item) {
         console.log(item);
-    }
+    };
+
+    $scope.usersViewData = {
+        fnUserDetail: $scope.fnUserDetail,
+        users: [],
+        spinnerStatus: 'active',
+        serverStatus: 'deactive'
+    };
+
+    ReactService.load(UsersView, "users-view", $scope.usersViewData);
 
     // LOAD USERS
     RestService
         .getData("users")
         .then(function (data) {
-            self.spinnerStatus = false;
-            //self.users = data;
-            React.render(
-                React.createElement(HelloMessage, {test: test, data: data}),
-                document.getElementById('users-views')
-            );
-        }, function (error) {
-            self.spinnerStatus = false;
-            self.serverStatus = true;
+            $scope.usersViewData.spinnerStatus = 'deactive';
+            $scope.usersViewData.users = data;
+            ReactService.load(UsersView, "users-view", $scope.usersViewData);
+        }, function () {
+            $scope.usersViewData.spinnerStatus = 'deactive';
+            $scope.usersViewData.serverStatus = 'active';
+            ReactService.load(UsersView, "users-view", $scope.usersViewData);
         });
-
-    self.userDetail = function (id) {
-        $state.go("users.detail", {id: id});
-    };
 
 };

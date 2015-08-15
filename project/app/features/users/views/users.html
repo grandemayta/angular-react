@@ -1,11 +1,1 @@
-<!-- USER DETAIL -->
-<div ui-view="detail" ng-show="$state.includes('users.detail')" class="view-virtual"></div>
-
-<div ng-class="{'overflow-hidden' : currentState !== currentState}" class="view-content">
-    <spinner ng-if="users.spinnerStatus"></spinner>
-    <error-server ng-if="users.serverStatus"></error-server>
-
-    <div id="users-views"></div>
-
-</div>
-
+<div id="users-view"></div>
