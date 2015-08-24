@@ -11,8 +11,8 @@ module.exports = function ($scope, $state, ReactService, RestService) {
     $scope.usersViewData = {
         fnUserDetail: $scope.fnUserDetail,
         users: [],
-        spinnerStatus: "active",
-        serverStatus: "deactive"
+        spinnerStatus: true,
+        serverStatus: false
     };
 
     ReactService.load(UsersView, "users-view", $scope.usersViewData);
@@ -21,12 +21,12 @@ module.exports = function ($scope, $state, ReactService, RestService) {
     RestService
         .getData("users")
         .then(function (data) {
-            $scope.usersViewData.spinnerStatus = "deactive";
+            $scope.usersViewData.spinnerStatus = false;
             $scope.usersViewData.users = data;
             ReactService.load(UsersView, "users-view", $scope.usersViewData);
         }, function () {
             $scope.usersViewData.spinnerStatus = "deactive";
-            $scope.usersViewData.serverStatus = "active";
+            $scope.usersViewData.serverStatus = true;
             ReactService.load(UsersView, "users-view", $scope.usersViewData);
         });
 

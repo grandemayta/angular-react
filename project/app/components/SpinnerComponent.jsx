@@ -1,8 +1,9 @@
 var SpinnerComponent = React.createClass({
 
     render() {
+        var status = this.props.status ? 'active' : 'deactive';
         return (
-            <div className={this.props.status + " spinner-content"}>
+            <div className={status + " spinner-content"}>
                 <div className="three-quarters-loader"></div>
             </div>
         );

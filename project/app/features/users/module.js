@@ -6,4 +6,3 @@ app.controller("UsersController", [
 ]);
 
 module.exports = app;
-

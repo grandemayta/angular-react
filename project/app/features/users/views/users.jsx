@@ -1,7 +1,6 @@
 var Spinner = require("../../../components/SpinnerComponent.jsx");
 var ServerErrors = require("../../../components/ServerErrorsComponent.jsx");
 
-console.log(React);
 
 var UserDetailView = React.createClass({
 

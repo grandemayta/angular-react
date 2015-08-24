@@ -1,6 +1,7 @@
 var Spinner = require("../../../components/SpinnerComponent.jsx");
 var ServerErrors = require("../../../components/ServerErrorsComponent.jsx");
 
+
 var UserDetailComponent = React.createClass({
 
     userRepositories () {
@@ -8,11 +9,14 @@ var UserDetailComponent = React.createClass({
     },
 
     render() {
+        var enableView = (!this.props.spinnerStatus && !this.props.serverStatus) ? 'active' : 'deactive';
+
         return (
             <div className="view-content">
                 <Spinner status={this.props.spinnerStatus}/>
                 <ServerErrors status={this.props.serverStatus}/>
-                <div>
+
+                <div className={enableView}>
                     <figure style={{backgroundImage: 'url(' + this.props.user.avatar_url + ')'}} className="img-md-center"></figure>
                     <h2 className="label-center">Nickname</h2>
                     <p className="text-center">{this.props.user.login}</p>
@@ -26,6 +30,7 @@ var UserDetailComponent = React.createClass({
                         Repositories
                     </button>
                 </div>
+
             </div>
         );
     }

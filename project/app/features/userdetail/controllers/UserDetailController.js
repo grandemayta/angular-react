@@ -10,8 +10,8 @@ module.exports = function ($scope, $state, ReactService, RestService) {
     $scope.userDetailViewData = {
         fnUserRepositories: $scope.fnUserRepositories,
         user: {},
-        spinnerStatus: "active",
-        serverStatus: "deactive"
+        spinnerStatus: true,
+        serverStatus: false
     };
 
     ReactService.load(UserDetailView, "userdetail-view", $scope.userDetailViewData);
