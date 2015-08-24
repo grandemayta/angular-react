@@ -1,32 +1,39 @@
-module.exports = function ($scope, $state, ReactService, RestService) {
+module.exports = function (app) {
 
-    var UserDetailView = require("../views/userdetail.jsx");
+    app.controller("UserDetailController", [
+        "$scope", "$state", "ReactService", "RestService",
+        function ($scope, $state, ReactService, RestService) {
 
-    $scope.fnUserRepositories = function (item) {
-        console.log(item);
-        //$state.go("users.detail.repositories", {id: $state.params.id});
-    };
+            var UserDetailView = require("../views/userdetail.jsx");
 
-    $scope.userDetailViewData = {
-        fnUserRepositories: $scope.fnUserRepositories,
-        user: {},
-        spinnerStatus: true,
-        serverStatus: false
-    };
+            $scope.fnUserRepositories = function (item) {
+                console.log(item);
+                $state.go("users.detail.repositories", {id: $state.params.id});
+            };
 
-    ReactService.load(UserDetailView, "userdetail-view", $scope.userDetailViewData);
+            $scope.userDetailViewData = {
+                fnUserRepositories: $scope.fnUserRepositories,
+                user: {},
+                spinnerStatus: true,
+                serverStatus: false
+            };
 
-    // LOAD USER
-    RestService
-        .getData("users/" + $state.params.id)
-        .then(function (data) {
-            $scope.userDetailViewData.user = data;
-            $scope.userDetailViewData.spinnerStatus = false;
             ReactService.load(UserDetailView, "userdetail-view", $scope.userDetailViewData);
-        }, function (error) {
-            $scope.userDetailViewData.spinnerStatus = false;
-            $scope.userDetailViewData.serverStatus = true;
-            ReactService.load(UserDetailView, "userdetail-view", $scope.userDetailViewData);
-        });
+
+            // LOAD USER
+            RestService
+                .getData("users/" + $state.params.id)
+                .then(function (data) {
+                    $scope.userDetailViewData.user = data;
+                    $scope.userDetailViewData.spinnerStatus = false;
+                    ReactService.load(UserDetailView, "userdetail-view", $scope.userDetailViewData);
+                }, function (error) {
+                    $scope.userDetailViewData.spinnerStatus = false;
+                    $scope.userDetailViewData.serverStatus = true;
+                    ReactService.load(UserDetailView, "userdetail-view", $scope.userDetailViewData);
+                });
+
+        }
+    ]);
 
 };

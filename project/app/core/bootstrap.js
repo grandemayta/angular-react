@@ -14,6 +14,5 @@ var app = angular.module('app', [
 require('./run')(app);
 require('./modules')(app);
 require('../services')(app);
-require('../directives')(app);
 
 angular.bootstrap(document.body, ['app']);

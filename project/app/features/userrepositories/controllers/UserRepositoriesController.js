@@ -1,18 +1,33 @@
-module.exports = function ($scope, $state, RestService) {
+module.exports = function (app) {
 
-    $scope.title = $state.params.id + "\"s repositories";
-    $scope.spinnerStatus = true;
-    $scope.serverStatus = false;
+    app.controller("UserRepositoriesController", [
+        "$scope", "$state", "RestService", "ReactService",
+        function ($scope, $state, RestService, ReactService) {
 
-    // LOAD USER REPOSITORIES
-    RestService
-        .getData("users/" + $state.params.id + "/repos")
-        .then(function (data) {
-            $scope.repositories = data;
-            $scope.spinnerStatus = false;
-        }, function (error) {
-            $scope.spinnerStatus = false;
-            $scope.serverStatus = true;
-        });
+            var UsersRepositoriesView = require("../views/userrepositories.jsx");
+            $scope.title = $state.params.id + "\"s repositories";
+
+            $scope.usersRepositoriesViewData = {
+                repositories: [],
+                spinnerStatus: true,
+                serverStatus: false
+            };
+
+            ReactService.load(UsersRepositoriesView, "usersrepositories-view", $scope.usersRepositoriesViewData);
+
+            RestService
+                .getData("users/" + $state.params.id + "/repos")
+                .then(function (data) {
+                    $scope.usersRepositoriesViewData.repositories = data;
+                    $scope.usersRepositoriesViewData.spinnerStatus = false;
+                    ReactService.load(UsersRepositoriesView, "usersrepositories-view", $scope.usersRepositoriesViewData);
+                }, function (error) {
+                    $scope.usersRepositoriesViewData.spinnerStatus = false;
+                    $scope.usersRepositoriesViewData.serverStatus = true;
+                    ReactService.load(UsersRepositoriesView, "usersrepositories-view", $scope.usersRepositoriesViewData);
+                });
+
+        }
+    ]);
 
 };

@@ -1,33 +1,40 @@
-module.exports = function ($scope, $state, ReactService, RestService) {
+module.exports = function (app) {
 
-    //$scope.$emit("PAGE_TITLE", "Git users");
+    app.controller("UsersController", [
+        "$scope", "$state", "ReactService", "RestService",
+        function ($scope, $state, ReactService, RestService) {
 
-    var UsersView = require("../views/users.jsx");
+            //$scope.$emit("PAGE_TITLE", "Git users");
 
-    $scope.fnUserDetail = function (item) {
-        $state.go("users.detail", {id: item.id});
-    };
+            var UsersView = require("../views/users.jsx");
 
-    $scope.usersViewData = {
-        fnUserDetail: $scope.fnUserDetail,
-        users: [],
-        spinnerStatus: true,
-        serverStatus: false
-    };
+            $scope.fnUserDetail = function (item) {
+                $state.go("users.detail", {id: item.login});
+            };
 
-    ReactService.load(UsersView, "users-view", $scope.usersViewData);
+            $scope.usersViewData = {
+                fnUserDetail: $scope.fnUserDetail,
+                users: [],
+                spinnerStatus: true,
+                serverStatus: false
+            };
 
-    // LOAD USERS
-    RestService
-        .getData("users")
-        .then(function (data) {
-            $scope.usersViewData.spinnerStatus = false;
-            $scope.usersViewData.users = data;
             ReactService.load(UsersView, "users-view", $scope.usersViewData);
-        }, function () {
-            $scope.usersViewData.spinnerStatus = "deactive";
-            $scope.usersViewData.serverStatus = true;
-            ReactService.load(UsersView, "users-view", $scope.usersViewData);
-        });
+
+            // LOAD USERS
+            RestService
+                .getData("users")
+                .then(function (data) {
+                    $scope.usersViewData.spinnerStatus = false;
+                    $scope.usersViewData.users = data;
+                    ReactService.load(UsersView, "users-view", $scope.usersViewData);
+                }, function () {
+                    $scope.usersViewData.spinnerStatus = "deactive";
+                    $scope.usersViewData.serverStatus = true;
+                    ReactService.load(UsersView, "users-view", $scope.usersViewData);
+                });
+
+        }
+    ]);
 
 };
