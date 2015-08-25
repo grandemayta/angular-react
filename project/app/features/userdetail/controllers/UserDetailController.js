@@ -6,8 +6,7 @@ module.exports = function (app) {
 
             var UserDetailView = require("../views/userdetail.jsx");
 
-            $scope.fnUserRepositories = function (item) {
-                console.log(item);
+            $scope.fnUserRepositories = function () {
                 $state.go("users.detail.repositories", {id: $state.params.id});
             };
 

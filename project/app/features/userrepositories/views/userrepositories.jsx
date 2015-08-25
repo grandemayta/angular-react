@@ -8,7 +8,7 @@ var UserRepositoriesComponent = React.createClass({
         var self = this;
         var prepareHtml = function (item) {
             return (
-                <div className="list-view-02">
+                <div className="list-view-02" key={item.id}>
                     <div className="list-view-02-label-tiny">{item.created_at}</div>
                     <div className="list-view-02-label-large">{item.name}</div>
                     <div className="list-view-02-label-small">{item.language}</div>
